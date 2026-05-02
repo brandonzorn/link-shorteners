@@ -1,4 +1,4 @@
-from pkg_resources import resource_string
+from importlib.resources import read_text
 from typing import List
 
 def link_shorteners_list() -> List[str]:
@@ -7,11 +7,5 @@ def link_shorteners_list() -> List[str]:
         List[str]: A list containing link shorteners collected so far.
         eg. ['bit.ly/', 'ow.ly/']
     """
-    link_shorteners_file = resource_string('link_shorteners', 'link-shorteners.txt').decode('utf-8')
-    
-    # Removes duplicate urls present in the list, if any.
-    link_shorteners_set = {line.strip() for line in link_shorteners_file.splitlines()}
-    link_shorteners_list = list(link_shorteners_set)
-    return link_shorteners_list
-
-
+    data = read_text('link_shorteners', 'link-shorteners.txt', encoding='utf-8')
+    return list({line.strip() for line in data.splitlines() if line.strip()})
