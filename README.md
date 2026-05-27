@@ -1,48 +1,57 @@
-# link-shorteners
+# Antispam Link Shorteners 🛡️
 
-This repository provides a list of all known link shorteners (also known as URL shorteners). 
-This can help you block or filter link shorteners from your service. We are promoting responsible link shortening practices and trying to prevent spam.
-Built by [Maya](https://mayakyler.com) from [y.gy](https://app.y.gy).
+A Python library designed to detect and block spam URL shortener domains using a blocklist.
 
-**Latest Version**: 1.13.0 released on 2024-Oct-25
+This package provides a reliable way to check if a URL or domain belongs to a known link shortener (such as `bit.ly`,
+`t.co`, `tinyurl.com`).
+It helps developers protect their platforms from re-linking spam, chain shortening, and potential security risks.
 
-## Packages
+The blocklist is loaded into an in-memory `set` and cached via `lru_cache`. Subsequent checks require **zero disk I/O**
+overhead ($O(1)$ Complexity).
 
-Link-shorteners is available as a Python and Javascript package:
+---
 
-- [Python via PyPI](https://pypi.org/project/link-shorteners/)
-- [Javascript via NPM](https://www.npmjs.com/package/link-shorteners)
+## 📦 Installation
 
-Additional documentation (for installation, etc.) is available in the [Python README](https://github.com/mayakyler/link-shorteners/blob/main/py-link-shorteners/README.md) or [Javascript README](https://github.com/mayakyler/link-shorteners/blob/main/js-link-shorteners/README.md) .
+Install the package using `pip`:
 
-## Contributing
-The **link-shorteners** package is [open source](https://github.com/mayakyler/link-shorteners), allowing developers (you!) to contribute and keep our list of link shorteners up-to-date.
+```bash
+pip install antispam-link-shorteners
+```
 
-We welcome contributions from the community to enhance and expand the list of link shorteners. Feel free to submit issues or pull requests to add more link shorteners, ensuring that the package remains up-to-date and comprehensive.
+---
 
-> **IMPORTANT:** When updating a list of shorteners, make sure to update the `.txt` file in both the [npm package](https://github.com/mayakyler/link-shorteners/blob/main/js-link-shorteners/src/link-shorteners.txt) and [pypi package](https://github.com/mayakyler/link-shorteners/blob/main/py-link-shorteners/link_shorteners/link-shorteners.txt) to ensure consistency.
+## 🚀 Usage
 
-## License
+The library provides simple function: `link_shorteners_list`.
 
-[MIT](https://github.com/mayakyler/link-shorteners/blob/main/LICENSE)
+Use `link_shorteners_list()` to get the entire cached `set` of lowercase domains:
 
-## Motivation
+```python
+from antispam_link_shorteners import link_shorteners_list
 
-Our motivation for building and maintaining this repository stems from our experience building [y.gy](https://app.y.gy/), a link shortening platform. Facing challenges such as spam via other link-shortening platforms, we created this list to empower developers to efficiently block unwanted/spam links in destination URLs. By utilizing this package, you can enhance the security and integrity of your platform, making it a safer space for users.
+banned_shorteners = link_shorteners_list()
+print("bit.ly" in banned_shorteners)  # True (O(1) lookup)
+```
 
-## Trusted Link Shorteners
+---
 
-We do not include in this list a handful of link shorteners that are trusted to always lead to legitimate corporate pages:
+## 👥 Credits & Attribution
 
-- a.co (Amazon)
-- g.co (Google)
-- discord.gg (Discord)
-- do.co (DigitalOcean)
+This library represents a collaborative community effort and relies on the following open-source resources:
 
-If you represent a major trusted website that uses a shortener only for internal links, let us know and we'll put it on this list.
+1. **Data Source:** The domain blocklist text file is directly sourced from
+   the [PeterDaveHello/url-shorteners](https://github.com/PeterDaveHello/url-shorteners).
+2. **Original library:** This library is a heavily refactored, optimized, and modernized Python alternative based on
+   the [mayakyler/link-shorteners](https://github.com/mayakyler/link-shorteners).
 
-## See Also
+---
 
-- [Peter Dave's Link Shortener Repo](https://github.com/PeterDaveHello/url-shorteners)
-- [738's List of URL Shorteners](https://github.com/738/awesome-url-shortener?tab=readme-ov-file)
-- [Tim Leland's List of URL Shorteners](https://github.com/timleland/url-shorteners)
+## ⚖️ License
+
+This project uses a multi-license structure to cleanly respect all upstream authors:
+
+* **Python Wrapper Code:** Licensed under the **MIT License**.
+* **Original library::** Licensed under the **MIT License**.
+* **Blocklist Dataset:** Distributed under the **Creative Commons Attribution-ShareAlike 4.0 International License (
+  CC-BY-SA-4.0)**.

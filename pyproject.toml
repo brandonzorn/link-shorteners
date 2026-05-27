@@ -1,0 +1,27 @@
+[project]
+name = "antispam-link-shorteners"
+version = "0.1.0"
+description = "A fast, cached Python library to detect and block spam URL shortener domains."
+readme = "README.md"
+requires-python = ">=3.9, <=3.14"
+license = {text = "MIT"}
+authors = [
+    {name = "Vladimir Klimenko", email = "v.klimenko.2137@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = []
+
+[project.urls]
+"Repository" = "https://github.com/brandonzorn/link-shorteners"
+"Bug Tracker" = "https://github.com/brandonzorn/link-shorteners/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

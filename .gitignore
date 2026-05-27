@@ -1,1 +1,3 @@
-INSTRUCTIONS.md
+*.pyc
+
+.idea
