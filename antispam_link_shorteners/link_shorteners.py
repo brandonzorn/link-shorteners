@@ -24,3 +24,6 @@ def link_shorteners_list() -> Set[str]:
                 continue
             shorteners.add(cleaned_line)
     return shorteners
+
+
+__all__ = ["link_shorteners_list"]
