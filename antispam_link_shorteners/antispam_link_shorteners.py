@@ -15,12 +15,12 @@ def link_shorteners_list() -> Set[str]:
         Set[str]: A set containing clean, lowercase domains.
         Example: {"bit.ly", "t.co", "tinyurl.com"}
     """
-    resource_path = files("link_shorteners") / "shorteners.txt"
+    resource_path = files("antispam_link_shorteners") / "shorteners.txt"
     shorteners = set()
     with resource_path.open("r", encoding="utf-8") as f:
         for line in f:
             cleaned_line = line.strip().lower()
-            if cleaned_line and cleaned_line.startswith("#"):
+            if not cleaned_line or cleaned_line.startswith("#"):
                 continue
             shorteners.add(cleaned_line)
     return shorteners
