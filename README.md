@@ -38,7 +38,7 @@ print("bit.ly" in banned_shorteners)  # True (O(1) lookup)
 
 ## 👥 Credits & Attribution
 
-This library represents a collaborative community effort and relies on the following open-source resources:
+This library relies on the following open-source resources:
 
 1. **Data Source:** The domain blocklist text file is directly sourced from
    the [PeterDaveHello/url-shorteners](https://github.com/PeterDaveHello/url-shorteners).
@@ -51,7 +51,7 @@ This library represents a collaborative community effort and relies on the follo
 
 This project uses a multi-license structure to cleanly respect all upstream authors:
 
-* **Python Wrapper Code:** Licensed under the **MIT License**.
+* **Modified library:** Licensed under the **MIT License**.
 * **Original library::** Licensed under the **MIT License**.
 * **Blocklist Dataset:** Distributed under the **Creative Commons Attribution-ShareAlike 4.0 International License (
   CC-BY-SA-4.0)**.
