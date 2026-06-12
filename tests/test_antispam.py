@@ -32,31 +32,34 @@ class TestIsBlocked(unittest.TestCase):
     def test_blocked_links_various_formats(self) -> None:
         """Verify known link shorteners trigger a blocked status."""
         test_cases = [
-            "bit.ly",
-            "BIT.LY",
-            "  bit.ly  ",
-            "www.bit.ly",
+            "http://bit.ly",
+            "http://BIT.LY",
+            "  http://bit.ly  ",
+            "http://www.bit.ly",
             "http://bit.ly",
             "https://www.bit.ly",
             "https://bit.ly/some/path?param=1",
-            "WWW.BIT.LY/abc",
-            "u.to",
-            "u.shxj.pw",
+            "http://WWW.BIT.LY/abc",
+            "http://u.to",
+            "http://u.shxj.pw",
+            "ftp://u.shxj.pw",
         ]
         for url in test_cases:
             with self.subTest(url=url):
                 self.assertTrue(is_link_shortener(url))
 
     def test_allowed_links(self) -> None:
-        """Verify normal domain strings are not flagged as blocked."""
+        """Verify normal url strings are not flagged as blocked."""
         test_cases = [
-            "google.com",
+            "http://google.com",
             "https://github.com/trending",
-            "www.python.org",
-            "subdomain.example.co.uk",
-            "gu.to",
-            "www.gou.top",
-            "gu.shxj.pw",
+            "http://www.python.org",
+            "http://subdomain.example.co.uk",
+            "http://gu.to",
+            "udp://www.gou.top",
+            "smtp://gu.shxj.pw",
+            "udp://gu.shxj.pw:2153",
+            "ftp://gu.shxj.pw",
         ]
         for url in test_cases:
             with self.subTest(url=url):
@@ -81,17 +84,17 @@ class TestIsBlocked(unittest.TestCase):
             with self.subTest(invalid_input=invalid_input):
                 self.assertRaises(ValueError, is_link_shortener, invalid_input)
 
-    def test_invalid_domain_structures_raise_value_error(self) -> None:
-        """Verify invalid domain architectures raise a ValueError."""
-        invalid_domains = [
+    def test_invalid_url_structures_raise_value_error(self) -> None:
+        """Verify invalid url architectures raise a ValueError."""
+        invalid_urls = [
             "just_some_text",
             "http://localhost",
             "www.ggaaa",
             "https://invalid",
         ]
-        for domain in invalid_domains:
-            with self.subTest(domain=domain):
-                self.assertRaises(ValueError, is_link_shortener, domain)
+        for url in invalid_urls:
+            with self.subTest(url=url):
+                self.assertRaises(ValueError, is_link_shortener, url)
 
 
 if __name__ == "__main__":

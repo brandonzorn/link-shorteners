@@ -29,16 +29,15 @@ def link_shorteners_list() -> set[str]:
 
 
 def is_link_shortener(url: str) -> bool:
-    """Check if the provided URL or domain belongs to a known link shortener.
+    """Check if the provided URL belongs to a known link shortener.
 
     This method normalizes the input by stripping whitespace, converting it
     to lowercase, removing 'www.' prefixes, and extracting the core domain
-    (a.tld) regardless of whether the protocol (http/https) or trailing
-    paths are present.
+    (a.tld).
 
     Args:
         url (str): The URL or domain string to validate and check.
-            Examples: 'https://www.bit.ly/abc', 'bit.ly', 'www.t.co'
+            Examples: 'https://www.bit.ly/abc', 'ftp://bit.ly', 'smth://www.t.co'
 
     Returns:
         bool: True if the extracted domain is in the link shorteners
@@ -47,38 +46,35 @@ def is_link_shortener(url: str) -> bool:
     Raises:
         TypeError: If the input is not a string.
         ValueError: If the input is empty, blank, or does not represent a
-            valid URL/domain structure (e.g., missing a TLD dot).
+            valid URL/domain structure (e.g., missing protocol or a TLD dot).
 
     """
     if not isinstance(url, str):
         msg = f"Expected a string, got {type(url).__name__}"
         raise TypeError(msg)
 
-    url_clean = url.strip()
+    url_clean = url.strip().lower()
     if not url_clean:
         msg = "URL string cannot be empty or blank."
         raise ValueError(msg)
 
-    url_lower = url_clean.lower()
+    if "://" not in url_clean:
+        url_clean = "http://" + url_clean
 
-    if not url_lower.startswith(("http://", "https://")):
-        parsed_url = urlparse(f"https://{url_lower}")
-    else:
-        parsed_url = urlparse(url_lower)
-
+    parsed_url = urlparse(url_clean)
     hostname = parsed_url.hostname
 
-    if not hostname:
-        msg = f"The provided value '{url}' is not a valid URL or domain."
+    if hostname and hostname.startswith("www."):
+        hostname = hostname.removeprefix("www.")
+
+    if not parsed_url.scheme or not hostname or "." not in hostname:
+        msg = f"The provided value '{url}' is not a valid URL."
         raise ValueError(msg)
 
-    hostname = hostname.removeprefix("www.")
-
-    if "." not in hostname:
-        msg = f"The provided value '{url}' is not a valid URL or domain."
-        raise ValueError(msg)
-
-    return hostname in link_shorteners_list()
+    return (
+        hostname in link_shorteners_list()
+        or f"www.{hostname}" in link_shorteners_list()
+    )
 
 
 __all__ = ["is_link_shortener", "link_shorteners_list"]
