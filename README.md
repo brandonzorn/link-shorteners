@@ -3,14 +3,14 @@
 A lightweight, zero-dependency, ultra-fast Python library designed to detect and block malicious or spam URL shortener
 domains using a curated blocklist.
 
-This package provides a reliable way to check if an arbitrary URL or domain string belongs to a known link shortener (
-such as `bit.ly`, `t.co`, `tinyurl.com`). It helps developers protect their platforms from re-linking spam, malicious
+This package provides a reliable way to check if an arbitrary URL or domain string belongs to a known link shortener
+(such as `bit.ly`, `t.co`, `tinyurl.com`). It helps developers protect their platforms from re-linking spam, malicious
 redirects, chain shortening, and automated bot activities.
 
 ### Key Benefits
 
 * **High Performance:** The blocklist is parsed and loaded into an in-memory `set` upon the first call, cached
-  seamlessly via `functools.lru_cache`. Subsequent checks require **zero disk I/O overhead** providing immediate $O(1)$
+  seamlessly via `functools.lru_cache`. Subsequent checks require **zero disk I/O overhead** providing immediate $O (1)$
   lookups.
 * **Smart Input Normalization:** Transparently strips whitespace, ignores casing, drops `www.` prefixes, and securely
   handles both absolute URLs (with protocols) and naked domain variants.
@@ -49,7 +49,7 @@ from antispam_link_shorteners import is_link_shortener
 print(is_link_shortener("bit.ly"))  # True
 print(is_link_shortener("  BIT.LY  "))  # True (casing & whitespace)
 print(is_link_shortener("www.bit.ly"))  # True (www stripping)
-print(is_link_shortener("[https://www.bit.ly/abc?p=1](https://www.bit.ly/abc?p=1)"))  # True (path/query parsing)
+print(is_link_shortener("https://www.bit.ly/abc?p=1"))  # True (path/query parsing)
 
 # Legitimate domains pass through:
 print(is_link_shortener("https://github.com"))  # False
