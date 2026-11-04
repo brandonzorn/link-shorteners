@@ -29,6 +29,7 @@
 2fear.com
 2kgam.es
 2link.cc
+2no.co
 2nu.gs
 2pl.us
 2u.lc
@@ -55,7 +56,6 @@
 71a.xyz
 7news.link
 7ny.tv
-7oi.de
 8.ly
 89q.sk
 92url.com
@@ -114,6 +114,7 @@ amex.co
 ampr.gs
 amrep.org
 amz.run
+amzn.asia
 amzn.com
 amzn.pw
 amzn.to
@@ -180,7 +181,6 @@ binged.it
 bit.ly
 bitly.com
 bitly.is
-bitly.lc
 bityl.co
 bl.ink
 blap.net
@@ -340,7 +340,6 @@ dk.rog.gg
 dkng.co
 dky.bz
 dl.gl
-dld.bz
 dlsh.it
 dlvr.it
 dmdi.pl
@@ -378,7 +377,6 @@ emirat.es
 engt.co
 enshom.link
 entm.ag
-envs.sh
 epochtim.es
 ept.ms
 eqix.it
@@ -459,7 +457,6 @@ gen.cat
 geni.us
 genie.co.kr
 getf.ly
-geti.in
 gfuel.ly
 gh.io
 ghkp.us
@@ -487,7 +484,6 @@ go.hny.co
 go.id.me
 go.intel-academy.com
 go.intigriti.com
-go.jc.fm
 go.lamotte.fr
 go.lu-h.de
 go.ly
@@ -500,7 +496,6 @@ go.shell.com
 go.shr.lc
 go.sony.tw
 go.tinder.com
-go.usa.gov
 go.ustwo.games
 go.vic.gov.au
 godrk.de
@@ -552,7 +547,6 @@ hp.care
 hpe.to
 hrbl.me
 href.li
-ht.ly
 htgb.co
 htl.li
 htn.to
@@ -657,9 +651,7 @@ kp.org
 kpmg.ch
 krazy.la
 kuku.lu
-kurl.ru
 kutt.it
-ky77.link
 l.linklyhq.com
 l.prageru.com
 l8r.it
@@ -708,7 +700,6 @@ links2.me
 linkshare.pro
 linkye.net
 livemu.sc
-livestre.am
 llk.dk
 llo.to
 lmg.gg
@@ -822,7 +813,6 @@ nbzp.cz
 nchcnh.info
 nej.md
 neti.cc
-netm.ag
 nflx.it
 ngrid.com
 njersy.co
@@ -1015,7 +1005,6 @@ risu.io
 ritea.id
 rizy.ir
 rlu.ru
-rly.pt
 rnm.me
 ro.blox.com
 rog.gg
@@ -1066,7 +1055,6 @@ sdu.sk
 sdut.us
 se.rog.gg
 seagate.media
-sealed.in
 seedsta.rs
 seiu.co
 sejr.nl
@@ -1077,7 +1065,6 @@ sfca.re
 sfcne.ws
 sforce.co
 sfty.io
-sgq.io
 shar.as
 shiny.link
 shln.me
@@ -1130,7 +1117,6 @@ smu.gs
 sn.rs
 snd.sc
 sndn.link
-snip.link
 snip.ly
 snyk.co
 so.arte
@@ -1188,7 +1174,6 @@ t-mo.co
 t.cn
 t.co
 t.iotex.me
-t.libren.ms
 t.ly
 t.me
 t.tl
@@ -1200,7 +1185,6 @@ taiwangov.com
 tanks.ly
 tbb.tw
 tbrd.co
-tcrn.ch
 tdrive.li
 tdy.sg
 tek.io
@@ -1221,7 +1205,6 @@ thinfi.com
 thls.co
 thn.news
 thr.cm
-thrill.to
 ti.me
 tibco.cm
 tibco.co
@@ -1247,7 +1230,6 @@ tmz.me
 tnne.ws
 tnsne.ws
 tnvge.co
-tnw.to
 tny.cz
 tny.im
 tny.so
@@ -1290,7 +1272,6 @@ uafly.co
 ubm.io
 ubnt.link
 ubr.to
-ucbexed.org
 ucla.in
 ufcqc.link
 ugp.io
@@ -1300,7 +1281,6 @@ ukf.me
 ukoeln.de
 ul.rs
 ul.to
-ul3.ir
 ulvis.net
 ume.la
 umlib.us
@@ -1378,7 +1358,6 @@ waa.ai
 waad.co
 wahoowa.net
 walk.sc
-walkjc.org
 wapo.st
 warby.me
 warp.plus
@@ -1409,7 +1388,6 @@ wjcf.co
 wkf.ms
 wmojo.com
 wn.nr
-wndrfl.co
 wo.ws
 wooo.tw
 wp.me
@@ -1453,7 +1431,6 @@ yourls.org
 yourwish.es
 youtu.be
 yubi.co
-yun.ir
 z23.ru
 zaya.io
 zc.vg
@@ -1463,7 +1440,6 @@ zdrive.li
 zdsk.co
 zecz.ec
 zeep.ly
-zez.kr
 zi.ma
 ziadi.co
 zipurl.fr
@@ -1483,7 +1459,6 @@ zurl.co
 zurl.ir
 zurl.ws
 zws.im
-zxc.li
 zynga.my
 zywv.us
 zzb.bz
