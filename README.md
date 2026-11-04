@@ -27,7 +27,6 @@ pip install antispam-link-shorteners
 
 # Using uv (Recommended)
 uv add antispam-link-shorteners
-
 ```
 
 ---
@@ -38,9 +37,8 @@ The library exposes two main public functions: `is_link_shortener` and `link_sho
 
 ### 1. Checking a URL (`is_link_shortener`)
 
-The `is_link_shortener()` function takes an incoming string, normalizes it, runs security validation checks, and returns
-a
-boolean indicating whether the core domain is a known shortener.
+The `is_link_shortener()` function takes an incoming string, normalizes it, runs security validation checks,
+and returns a boolean indicating whether the core domain is a known shortener.
 
 ```python
 from antispam_link_shorteners import is_link_shortener
@@ -53,7 +51,6 @@ print(is_link_shortener("https://www.bit.ly/abc?p=1"))  # True (path/query parsi
 
 # Legitimate domains pass through:
 print(is_link_shortener("https://github.com"))  # False
-
 ```
 
 #### Exception Handling & Security Guardrails
@@ -77,7 +74,6 @@ try:
     is_link_shortener("www.ggaaa")  # ValueError
 except ValueError:
     ...
-
 ```
 
 ### 2. Fetching the Underlying Raw List (`link_shorteners_list`)
@@ -91,7 +87,6 @@ from antispam_link_shorteners import link_shorteners_list
 banned_set = link_shorteners_list()
 print(type(banned_set))  # <class 'set'>
 print("tinyurl.com" in banned_set)  # True (O(1) memory lookup)
-
 ```
 
 ---
